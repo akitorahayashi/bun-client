@@ -4,8 +4,8 @@
 
 This repository owns:
 
-- `src/` — public exports, feature modules, and library errors
-- `tests/` — package behavior tests
+- `src/` — public exports, API client facade, HTTP transport, DTOs, and client errors
+- `tests/` — package and HTTP boundary behavior tests
 - `.github/workflows/` — CI automation
 
 ## Workflow
