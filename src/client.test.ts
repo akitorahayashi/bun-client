@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { ExampleClient, type FetchLike } from '../src';
+import { ExampleClient, type FetchLike } from './index';
 
 function jsonResponse(body: unknown): Response {
   return new Response(JSON.stringify(body), {
