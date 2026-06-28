@@ -6,13 +6,14 @@
 src/
   index.ts            Public export boundary
   client.ts           Public API client facade
+  client.test.ts      Colocated unit tests
   transport.ts        Fetch-based HTTP boundary
+  transport.test.ts   Colocated unit tests
   errors.ts           Client, HTTP, and response parse errors
   types/
     <resource>.ts     API request and response DTOs
 tests/
-  client.test.ts      Tests for src/client.ts
-  transport.test.ts   Tests for src/transport.ts
+  <name>.test.ts      Integration tests using test servers or mock endpoints
 ```
 
 ## Architecture
@@ -61,6 +62,8 @@ bun test         # Run all tests
 - Tests assert public behavior through exports from `src/index.ts`.
 - Test filenames correspond to implementation filenames so the owning test file
   is discoverable from the edited source file.
+- Unit tests live next to source files under `src/` and test pure transformations.
+- Integration tests live under `tests/` and test filesystem, CLI, subprocess, or network behavior.
 - Client tests use injected fetch implementations or local test servers. External service availability is not required.
 - New client methods include tests at the package boundary.
 - Cross-cutting test filenames such as `api.test.ts`, `validation.test.ts`, and

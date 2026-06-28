@@ -5,7 +5,7 @@ import {
   HttpError,
   HttpTransport,
   ResponseParseError,
-} from '../src';
+} from './index';
 
 describe('HttpTransport', () => {
   test('builds URLs with query parameters', async () => {
